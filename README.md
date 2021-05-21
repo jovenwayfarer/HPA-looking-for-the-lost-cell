@@ -6,7 +6,7 @@ Congrats to everyone! We are glad to get 16th in this competition. We want to sa
 
 ### Pipeline:
 5 cell-wise model, 3 image-wise model, 1 yolov5 model. All image-wise model receive green channels only.
-
+![image](.pics/img1.jpg)
 
 ### Weights:
 0.5 cell-wise model + 0.3 image-wise model + 0.1 yolov5 model + 0.1 image-wise model(predict the cell)
@@ -34,7 +34,7 @@ Considering the cell-wise tile has unreliable class, we think pseudo labeling on
 2)Use one predict the other;<br/>
 3)For the possibility of each class:<br/>
 i)If confidence value>0.8, put this class into class list;<br/>
-ii)If confidence value0.2, if the answer is YES, we will put class 18 into class list;<br/>
+ii)If confidence value<0.2, if the answer is YES, we will put class 18 into class list;<br/>
 v)Drop cell tiles without any class.<br/>
 
 ### Some postscripts by Alien:
@@ -60,8 +60,8 @@ So we came up with a way, it goes like this:<br/>
 2)Choose a cell in interest, set all area except that to 0;<br/>
 3)Resize the image to the size that image-wise model need;<br/>
 4)Predict. Image-wise models(My public kernel )<br/>
-img example<br/>
-img<br/>
+![image](.pics/img2.jpg)<br/>
+
 
 I think it is a 'magic' part of our solution.<br/>
 
